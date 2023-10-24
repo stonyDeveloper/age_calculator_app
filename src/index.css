@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins-Bold"), url("./fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-BoldItalic";
+  src: local("Poppins-BoldItalic"), url("./fonts/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: local("Poppins-ExtraBold"), url("./fonts/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-ExtraBoldItalic";
+  src: local("Poppins-ExtraBoldItalic") url("./fonts/Poppins-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Italic";
+  src: local("Poppins-Italic") url("./fonts/Poppins-Italic.ttf");
+}
+
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular") url("./fonts/Poppins-Regular.ttf");
+}
+
+:root {
+  font-family: 'Poppins-Regular';
+}
+
+@keyframes number-change {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-number-change {
+  animation: number-change 1s;
+}
+
+
