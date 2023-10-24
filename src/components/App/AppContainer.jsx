@@ -3,11 +3,8 @@ import InputFields from "../Input/InputFields";
 import Divider from "../Divider/Divider";
 import Displays from "../Display/Displays";
 import { Field, Form, Formik } from "formik";
-import Input from "../Input/Input";
 import { dateOfBirthSchema } from "../../utils/validations/formValidation";
 import { useState } from "react";
-import { currentMonth } from "../../utils/functions/currentMonth";
-import { currentYear } from "../../utils/functions/currentYear";
 import { calculateAge } from "../../utils/functions/calculateAge";
 const AppContainer = () => {
   const [days, setDays] = useState()
@@ -21,18 +18,15 @@ const AppContainer = () => {
         year: "",
       }}
       validationSchema={dateOfBirthSchema}
-      onSubmit={async (values, { resetForm }) => {
+      onSubmit={async (values) => {
         const dobEntered = values.day + "-" + values.month + "-" + values.year;
         const ageDiff = calculateAge(dobEntered)
         setYear(ageDiff.years)
         setMonths(ageDiff.months)
         setDays(ageDiff.days)
-        console.log(ageDiff)
-
-        // console.log(values, dobEntered, "Values");
       }}
     >
-      {({ touched, errors, isValid, dirty, setFieldValue }) => {
+      {({ touched, errors }) => {
         return (
           <Form
             id="form"
